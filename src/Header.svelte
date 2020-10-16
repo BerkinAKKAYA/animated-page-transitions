@@ -32,7 +32,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		z-index: 1;
+		z-index: 2;
 
 		position: sticky;
 		top: 0;
