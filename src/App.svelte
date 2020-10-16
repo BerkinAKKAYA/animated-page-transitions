@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import Header from "./Header.svelte";
 
-	let pageElements = [];
 	let page = "home";
 
+	// For example if the url is "xyz.com/#about",
+	// page variable will be "about"
 	if (location.href.includes("#")) {
 		page = location.href.split("#").slice(-1)[0];
 	}
@@ -14,10 +14,7 @@
 
 <!-- ANIMATE HERE -->
 <div id="pages">
-	<div
-		class="page"
-		class:fadeIn={page === 'home'}
-		class:fadeOut={page !== 'home'}>
+	<div class="page" class:show={page === 'home'}>
 		<h1>HOME</h1>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -57,10 +54,7 @@
 			laoreet ac. Maecenas pulvinar neque orci, et dictum erat aliquam ut.
 		</p>
 	</div>
-	<div
-		class="page"
-		class:fadeIn={page === 'about'}
-		class:fadeOut={page !== 'about'}>
+	<div class="page" class:show={page === 'about'}>
 		<h1>ABOUT</h1>
 		<p>
 			Duis massa augue, imperdiet ut sem ac, cursus sagittis nulla. Donec
@@ -92,10 +86,7 @@
 			volutpat, sodales tellus in, malesuada magna.
 		</p>
 	</div>
-	<div
-		class="page"
-		class:fadeIn={page === 'products'}
-		class:fadeOut={page !== 'products'}>
+	<div class="page" class:show={page === 'products'}>
 		<h1>PRODUCTS</h1>
 		<p>
 			Nam a nunc velit. Duis condimentum turpis eget elit volutpat varius.
@@ -132,10 +123,7 @@
 			gravida. Etiam tincidunt massa tellus.
 		</p>
 	</div>
-	<div
-		class="page"
-		class:fadeIn={page === 'contact'}
-		class:fadeOut={page !== 'contact'}>
+	<div class="page" class:show={page === 'contact'}>
 		<h1>CONTACT</h1>
 		<p style="padding-left: 20px; text-indent: 0">
 			<span><b>PHONE:</b> +90 538 284 8787</span>
@@ -177,23 +165,22 @@
 </footer>
 
 <style lang="scss">
-	.fadeIn {
-		animation: FadeIn 1s;
-		animation-fill-mode: forwards;
-	}
-	.fadeOut {
-		animation: FadeOut 1s;
-		animation-fill-mode: forwards;
-	}
 	#pages {
 		position: relative;
 
 		.page {
 			width: 800px;
 			max-width: 80vw;
-			position: relative;
 
-			&:not(.fadeIn) {
+			&.show {
+				animation: FadeIn 1s;
+				animation-fill-mode: forwards;
+				position: relative;
+				z-index: 1;
+			}
+			&:not(.show) {
+				animation: FadeOut 1s;
+				animation-fill-mode: forwards;
 				position: absolute;
 			}
 
@@ -213,7 +200,7 @@
 
 	@keyframes FadeIn {
 		0% {
-			transform: translateX(-200px);
+			transform: translateX(-50%);
 			opacity: 0;
 		}
 		100% {
@@ -222,12 +209,12 @@
 		}
 	}
 	@keyframes FadeOut {
-		from {
+		0% {
 			transform: translateX(0);
 			opacity: 1;
 		}
-		to {
-			transform: translateX(200px);
+		100% {
+			transform: translateX(50%);
 			opacity: 0;
 		}
 	}
