@@ -173,15 +173,16 @@
 			max-width: 80vw;
 
 			&.show {
-				animation: FadeIn 1s;
+				animation: FadeIn 0.6s ease;
 				animation-fill-mode: forwards;
 				position: relative;
 				z-index: 1;
 			}
 			&:not(.show) {
-				animation: FadeOut 1s;
+				animation: FadeOut 0.6s ease;
 				animation-fill-mode: forwards;
 				position: absolute;
+				top: 0;
 			}
 
 			h1 {
@@ -190,6 +191,7 @@
 			p {
 				text-indent: 15px;
 				line-height: 1.6em;
+				text-align: justify;
 
 				&:not(:nth-last-child(1)) {
 					margin-bottom: 40px;
@@ -200,7 +202,7 @@
 
 	@keyframes FadeIn {
 		0% {
-			transform: translateX(-50%);
+			transform: translateX(-60%);
 			opacity: 0;
 		}
 		100% {
@@ -214,7 +216,7 @@
 			opacity: 1;
 		}
 		100% {
-			transform: translateX(50%);
+			transform: translateX(60%);
 			opacity: 0;
 		}
 	}

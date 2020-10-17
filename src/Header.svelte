@@ -11,10 +11,30 @@
 <header>
 	<h1>Animated Pages</h1>
 	<nav class:show={showNavMobile}>
-		<a on:click={() => (page = 'home')} href="#home">HOME</a>
-		<a on:click={() => (page = 'about')} href="#about">ABOUT</a>
-		<a on:click={() => (page = 'products')} href="#products">PRODUCTS</a>
-		<a on:click={() => (page = 'contact')} href="#contact">CONTACT</a>
+		<a
+			on:click={() => {
+				page = 'home';
+				showNavMobile = false;
+			}}
+			href="#home">HOME</a>
+		<a
+			on:click={() => {
+				page = 'about';
+				showNavMobile = false;
+			}}
+			href="#about">ABOUT</a>
+		<a
+			on:click={() => {
+				page = 'products';
+				showNavMobile = false;
+			}}
+			href="#products">PRODUCTS</a>
+		<a
+			on:click={() => {
+				page = 'contact';
+				showNavMobile = false;
+			}}
+			href="#contact">CONTACT</a>
 	</nav>
 	<img
 		on:click={ToggleNav}
