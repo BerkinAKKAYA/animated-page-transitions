@@ -16,24 +16,28 @@
 				page = 'home';
 				showNavMobile = false;
 			}}
+			class:active={page === 'home'}
 			href="#home">HOME</a>
 		<a
 			on:click={() => {
 				page = 'about';
 				showNavMobile = false;
 			}}
+			class:active={page === 'about'}
 			href="#about">ABOUT</a>
 		<a
 			on:click={() => {
 				page = 'products';
 				showNavMobile = false;
 			}}
+			class:active={page === 'products'}
 			href="#products">PRODUCTS</a>
 		<a
 			on:click={() => {
 				page = 'contact';
 				showNavMobile = false;
 			}}
+			class:active={page === 'contact'}
 			href="#contact">CONTACT</a>
 	</nav>
 	<img
@@ -119,7 +123,8 @@
 					transition: all 0.3s ease;
 				}
 
-				&:hover {
+				&:hover,
+				&.active {
 					color: #fff;
 
 					@media (min-width: 801px) {
@@ -128,6 +133,10 @@
 							background-color: #fff;
 						}
 					}
+				}
+
+				&.active {
+					cursor: default;
 				}
 			}
 		}

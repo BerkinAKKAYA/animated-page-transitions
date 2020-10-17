@@ -202,7 +202,7 @@
 
 	@keyframes FadeIn {
 		0% {
-			transform: translateX(-60%);
+			transform: translateX(-50%);
 			opacity: 0;
 		}
 		100% {
@@ -211,12 +211,8 @@
 		}
 	}
 	@keyframes FadeOut {
-		0% {
-			transform: translateX(0);
-			opacity: 1;
-		}
 		100% {
-			transform: translateX(60%);
+			transform: translateX(50%);
 			opacity: 0;
 		}
 	}

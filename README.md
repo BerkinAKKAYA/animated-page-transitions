@@ -1,3 +1,5 @@
 # Animated Page Transitions
 
-Live at [here](https://berkinakkaya.github.io/animated-page-transitions)
+Animations built using pure CSS.
+
+Live at [here](https://berkinakkaya.github.io/animated-page-transitions).
