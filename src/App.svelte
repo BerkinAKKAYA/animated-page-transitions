@@ -169,8 +169,8 @@
 		position: relative;
 
 		.page {
-			width: 800px;
-			max-width: 80vw;
+			width: 1000px;
+			max-width: 85vw;
 
 			&.show {
 				animation: FadeIn 0.6s ease;
@@ -187,11 +187,13 @@
 
 			h1 {
 				margin-bottom: 40px;
+				font-size: 2.5em;
 			}
 			p {
 				text-indent: 15px;
-				line-height: 1.6em;
+				line-height: 1.8em;
 				text-align: justify;
+				font-size: 1.6em;
 
 				&:not(:nth-last-child(1)) {
 					margin-bottom: 40px;
@@ -232,7 +234,8 @@
 	}
 
 	footer {
-		margin: 75px 0;
+		margin: 75px 0 50px 0;
+		font-size: 1.2em;
 
 		span {
 			opacity: 0.5;

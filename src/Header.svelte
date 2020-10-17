@@ -105,10 +105,12 @@
 			}
 
 			a {
-				padding: 6px;
-				margin: 6px;
+				padding: 8px;
+				margin: 8px 12px;
 				color: #aaa;
 				transform: translateY(2px);
+				font-size: 1.3em;
+				letter-spacing: 2px;
 
 				&::after {
 					content: "";
@@ -116,19 +118,22 @@
 					width: 0;
 					height: 2px;
 					background-color: #aaa;
-					margin-top: 5px;
+					margin-top: 10px;
 					position: relative;
 					left: 50%;
 					transform: translateX(-50%);
 					transition: all 0.3s ease;
+					opacity: 0;
 				}
 
 				&:hover,
 				&.active {
 					color: #fff;
 
-					@media (min-width: 801px) {
-						&::after {
+					&::after {
+						opacity: 1;
+
+						@media (min-width: 801px) {
 							width: calc(100% + 10px);
 							background-color: #fff;
 						}
